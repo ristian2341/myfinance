@@ -1,0 +1,466 @@
+.color-white {
+    color: #fff;
+} .font-size-10 {
+    font-size: 10px;
+} .font-size-12 {
+    font-size: 12px;
+} .font-size-18 {
+    font-size: 18px !important;
+} .margin-left-0 {
+    margin-left: 0 !important;
+} .margin-left-5 {
+    margin-left: 5px;
+} .margin-left-10 {
+    margin-left: 10px;
+} .margin-left-15 {
+    margin-left: 15px;
+} .margin-bottom-0 {
+    margin-bottom: 0px;
+} .margin-bottom-10 {
+    margin-bottom: 10px;
+} .margin-bottom-20 {
+    margin-bottom: 20px;
+} .margin-top-0 {
+    margin-top: 0px;
+} .margin-top-10 {
+    margin-top: 10px;
+} .margin-top-15 {
+    margin-top: 15px;
+} .margin-top-20 {
+    margin-top: 20px;
+} .margin-top-25 {
+    margin-top: 25px;
+} .margin-top-30 {
+    margin-top: 30px;
+} .text-left {
+    text-align: left;
+} .text-center {
+    text-align: center;
+} .text-right {
+    text-align: right;
+} .padding-left-10 {
+    padding-left: 10px;
+} .vertical-align-top {
+    vertical-align: text-top;
+}
+
+button.btn {
+    position: relative;
+} button[data-button] > span {
+    margin-left: 10px;
+} .btn-row {
+    margin-bottom: 2px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+} .btn-row span[data-remove="true"] {
+    background-color: #fff;
+    border-radius: 50%;
+    color: #9d9494;
+    font-size: 12px;
+    height: 20px;
+    margin-top: 5px;
+    position: absolute;
+    right: 10px;
+    width: 20px;
+} .btn-row span[data-icon="true"] {
+    right: 20px;
+} .btn-row span[data-remove="true"]::before {
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+} .btn-row-title {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 10px;
+    overflow: hidden;
+    padding-right: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+} .btn-export {
+    display: inline-block;
+    height: 30px;
+    margin-left: 20px;
+    position: relative;
+} .btn-export span {
+    display: inline-block;
+    height: inherit;
+    line-height: 30px;
+    margin-left: 20px;
+} .btn-export .fontello {
+    font-size: 25px;
+} .btn-export .fontello.icon-file-pdf {
+    color: #b31111;
+} .btn-export .fontello.icon-file-excel {
+    color: #2b8414;
+} .btn-move {
+    display: inline-block;
+    position: relative;
+    width: 12px;
+}
+
+.custom-checklist {
+    font-weight: 400;
+    margin-right: 15px;
+} .custom-checklist input[type="checkbox"] {
+    margin-right: 5px;
+} .label-menu-parent-1 {
+    border-bottom: 1px solid #eee;
+    font-weight: 400;
+    margin-left: 20px;
+    width: 400px;
+} .custom-text-desc {
+    color: #6d7374;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    min-width: 100px;
+    max-width: 250px;
+    position: relative;
+    width: 250px;
+} .custom-text-desc::before {
+    content: ":";
+    position: absolute;
+    right: -10px;
+} .custom-text-value {
+    color: #df0202;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: right;
+    width: 100px;
+} .custom-check-value {
+    display: table-cell;
+    height: 30px;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    width: 30px;
+} .custom-check-value i.fontello {
+    right: -15px;
+}
+
+.grid-view .table-bordered tbody tr td:nth-child(1){
+    text-align: center;
+} .column-action {
+    width: 100px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+} .table-custom thead tr th {
+    background-color: #e7e7e7;
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+} .table-custom tbody tr td {
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.table-report {
+    border: 1px dashed #4a4a4a;
+    vertical-align: bottom;
+} .table-report thead tr th {
+    vertical-align: middle;
+} .table-report thead tr th, .table-report tbody tr td {
+    border: 1px dashed #4a4a4a;
+} .table-onpdf thead tr th, .table-onpdf tbody tr td {
+    border: 1px dotted #000;
+    padding: 8px;
+} .table-report tbody tr.row-freeze {
+    background-color: #f3f3f3;
+    font-weight: 700;
+}
+
+.table-report-individual {
+    border: 1px solid #000;
+} .table-report-individual thead tr th, .table-report-individual tbody tr td {
+    border: 1px solid #000;
+    border-bottom-width: 1px !important;
+} .title-header-report {
+    font-size: 30px;
+    vertical-align: middle !important;
+} .title-description {
+    font-size: 18px;
+} .no-border {
+    border: unset;
+} .no-border-right {
+    border-right-color: transparent !important;
+} .no-border-left {
+    border-left-color: transparent !important;
+} .pictures-wrapper {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+} .pictures-container {
+    background-color: #ebebeb;
+    border: 1px solid #ebebeb;
+    display: inline-block;
+    margin-top: 5px;
+    height: 230px;
+    width: 180px;
+} .pictures-container img {
+    height: 230px;
+    padding: 5px;
+    width: 180px;
+} .background-header {
+    background-color: #bbb9b9;
+}
+
+.container-image-layer {
+    background-color: #000;
+    display: inline-block;
+    height: 100%;
+    opacity: 0.6;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+} .container-image-zoom {
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    display: inline-block;
+    height: 500px;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    z-index: 4;
+} .container-image {
+    border: 1px solid #eee;
+    display: inline-block;
+    height: 80px;
+    margin-right: 10px;
+    padding: 5px;
+    position: relative;
+    width: 80px;
+} .remove-image, .remove-image-zoom {
+    background-color: #fff;
+    border: 1px solid #a19f9f;
+    border-radius: 50%;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+} .remove-image {
+    height: 15px;
+    width: 15px;
+} .remove-image-zoom {
+    height: 20px;
+    width: 20px;
+} .remove-image .icon-cancel, .remove-image-zoom .icon-cancel {
+    left: 50%;
+} .remove-image .icon-cancel {
+    font-size: 8px;
+} .remove-image-zoom .icon-cancel {
+    font-size: 9px;
+} .size-soal-img {
+    color: #a19999;
+    cursor: zoom-in;
+    font-size: 8px;
+    height: 100%;
+    width: 100%;
+}
+
+.container-table-overflow {
+    border: 1px solid #eee;
+    padding: 0px 10px 15px 10px;
+    position: relative;
+} .table-overflow {
+    max-height: 460px;
+    overflow: hidden;
+    overflow-y: scroll;
+} .table-overflow .table-custom {
+    margin-bottom: 0;
+} .table-overflow::-webkit-scrollbar {
+    width: 10px;
+} .table-overflow::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 50px;
+    outline: 1px solid #f7f0f0;
+}
+
+.text-label {
+    border-radius: 10px;
+    color: #fff!important;
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 15px;
+} .text-label.text-success {
+    background-color: #28a745;
+} .text-label.text-warning {
+    background-color: #ff5302;
+} .text-label.text-primary {
+    background-color: #186679;
+} .text-label.text-danger {
+    background-color: #c10501;
+} .text-label.text-default {
+    background-color: #b1b1b1;
+}
+
+.popup-layer {
+    background-color: #2e3838;
+    height: 100%;
+    opacity: 0.5;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+} .popup-form {
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    left: 50%;
+    position: fixed;
+    top: 10%;
+    z-index: 10;
+} .popup-form-header {
+    border-bottom: 1px solid #b1b1b1;
+    text-align: left;
+    padding: 10px 15px;
+    position: relative;
+} .popup-form-header h5 {
+    font-size: 16px;
+    margin-bottom: 0;
+} .popup-form-body {
+    padding: 20px;
+} .popup-header h5 {
+    font-size: 14px;
+} .popup-form .popup-body .form-control {
+    border-radius: 0;
+    font-size: 12px;
+    height: 30px;
+} .popup-form .popup-body .form-control table tbody tr {
+    cursor: pointer;
+} .popup-form .popup-form-body a.btn {
+    position: relative;
+}
+
+/** PDF STYLE */
+.on-pdf .background-header {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 20px;
+} .on-pdf .title-header-report {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 5px 20px;
+}
+
+[data-render="chart"] {
+    display: inline-block;
+    height: 400px;
+    width: 100%;
+}
+
+.fieldsetbox-on-canvas {
+    display: inline-block;
+    width: 100%;
+} .fieldsetbox-on-canvas-header {
+    display: inline-block;
+    height: 30px;
+    width: 100%;
+    background-color: #d7980a;
+    padding: 0 20px;
+    line-height: 30px;
+    color: #fff;
+} .fieldsetbox-on-canvas-body {
+    border: 3px solid #d7980a;
+    display: inline-block;
+    height: auto;
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    width: 100%;
+} .fieldsetbox-on-canvas-body::-webkit-scrollbar {
+    width: 10px;
+} .fieldsetbox-on-canvas-body::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 50px;
+    outline: 1px solid #fff;
+}
+
+.scroll-list {
+    height: auto;
+    min-height: 100px;
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+/** Export PDF */
+.table-form {
+    border: 1px solid #000;
+}
+.table-form.no-border {
+    border: unset;
+}
+.table-form.border-bottom-0 {
+    border-bottom: unset;
+}
+.table-form.border-top-0 {
+    border-top: unset;
+}
+.table-form tbody tr td {
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+.table-form tbody tr td.padding-bottom-0 {
+    padding-bottom: 0;
+}
+.table-form tbody tr td.padding-left-10 {
+    padding-left: 10px;
+}
+.table-form tbody tr td.padding-left-15 {
+    padding-left: 15px;
+}
+.table-form tbody tr td.padding-left-25 {
+    padding-left: 25px;
+}
+.table-form tbody tr td.padding-right-10 {
+    padding-right: 10px;
+}
+.table-form tbody tr td.padding-top-0 {
+    padding-top: 0;
+}
+.table-form tbody tr td.border-bottom {
+    border-bottom: 1px solid #000;
+}
+.table-form tbody tr td.border-bottom-dotted {
+    border-bottom: 1px dotted #000;
+}
+.table-form tbody tr td.border-right {
+    border-right: 1px solid #000;
+}
+.table-form tbody tr td.column-cause {
+    padding-bottom: 60px;
+}
+.table-form tbody tr td.column-corrective {
+    padding-bottom: 50px;
+}
+
+.table-form.form-excuse tbody tr td {
+    font-size: 12px;
+}
+.table-rencana-tindakan {
+    border: 1px solid #000;
+}
+
+.div-checkbox {
+    border: 1px solid #000;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+/** End Export PDF */
