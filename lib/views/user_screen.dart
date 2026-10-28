@@ -334,7 +334,7 @@ class UserScreen extends StatelessWidget {
                               teksSel = user.phone.toString();
                               break;
                             case 'Supervisor':
-                              teksSel = user.isSupervisor.toString() == 1
+                              teksSel = user.isSupervisor == 1
                                   ? 'Yes'
                                   : 'No';
                               break;

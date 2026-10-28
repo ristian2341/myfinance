@@ -524,8 +524,7 @@ class MenuScreen extends StatelessWidget {
   // ================= WIDGET FORM INPUT MENU BARU =================
   Widget _buildFormInput(BuildContext context, MenuAppController menuCtrl) {
     final bool isNewMenu =
-        menuCtrl.idMenuController.value == '' ||
-        menuCtrl.idMenuController.value.toString().trim().isEmpty;
+        menuCtrl.idMenuController.text.trim().isEmpty;
     final String cardTitle = isNewMenu ? "Form Menu Baru" : "Form Update Menu";
 
     return SelectionArea(
