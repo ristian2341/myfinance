@@ -1,0 +1,150 @@
+name: CD & Release Pipeline
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      build_windows:
+        description: 'Build Windows Desktop artifact'
+        type: boolean
+        default: true
+      release_tag:
+        description: 'Release Tag name (required for manual trigger, e.g. v1.0.0)'
+        type: string
+        default: 'v1.0.0'
+
+permissions:
+  contents: write
+
+jobs:
+  build_android:
+    name: Build Android (APK & AAB)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Cache Pub Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Run Tests
+        run: flutter test
+
+      - name: Build Release APK
+        run: flutter build apk --release
+
+      - name: Build Release App Bundle (AAB)
+        run: flutter build appbundle --release
+
+      - name: Prepare Android Artifacts
+        run: |
+          mkdir -p release_assets
+          cp build/app/outputs/flutter-apk/app-release.apk release_assets/myfinance-release.apk
+          cp build/app/outputs/bundle/release/app-release.aab release_assets/myfinance-release.aab
+
+      - name: Upload Android Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-release-artifacts
+          path: release_assets/*
+
+  build_windows:
+    name: Build Windows Desktop (.zip)
+    if: startsWith(github.ref, 'refs/tags/v') || github.event.inputs.build_windows == 'true'
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Enable Windows Desktop Support
+        run: flutter config --enable-windows-desktop
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Build Windows Release
+        run: flutter build windows --release
+
+      - name: Package Windows Release as Zip
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path release_assets
+          Compress-Archive -Path build\windows\x64\runner\Release\* -DestinationPath release_assets\myfinance-windows-x64.zip
+
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-release-artifact
+          path: release_assets/myfinance-windows-x64.zip
+
+  publish_release:
+    name: Publish GitHub Release
+    needs: [build_android, build_windows]
+    if: always() && (needs.build_android.result == 'success')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download Android Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: android-release-artifacts
+          path: dist
+
+      - name: Download Windows Artifact (if exists)
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: windows-release-artifact
+          path: dist
+
+      - name: Determine Tag Name
+        id: tag_info
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "tag=${{ github.event.inputs.release_tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "tag=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create or Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag_info.outputs.tag }}
+          name: Release ${{ steps.tag_info.outputs.tag }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: dist/*

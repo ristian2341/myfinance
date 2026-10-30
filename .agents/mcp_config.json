@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "sqlite": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sqlite",
+        "--db-path",
+        "${workspaceFolder}/database/my_app_database.db"
+      ],
+      "description": "Server MCP SQLite untuk query dan inspeksi langsung struktur database lokal myfinance."
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+      },
+      "description": "Server MCP GitHub untuk berinteraksi dengan repo, pull request, issues, dan release."
+    },
+    "fetch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-fetch"
+      ],
+      "description": "Server MCP Fetch untuk mengambil data eksternal, dokumentasi API, atau konten web."
+    }
+  }
+}
