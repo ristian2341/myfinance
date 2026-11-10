@@ -165,12 +165,12 @@ class GroupMenuScreen extends StatelessWidget {
                       hintText: 'Cari data group menu...',
                       hintStyle: TextStyle(
                         fontSize: 13,
-                        color: Colors.white.withOpacity(0.5),
+                        color: Colors.white.withValues(alpha: 0.5),
                       ),
                       prefixIcon: Icon(
                         Icons.search,
                         size: 18,
-                        color: Colors.white.withOpacity(0.5),
+                        color: Colors.white.withValues(alpha: 0.5),
                       ),
                       contentPadding: const EdgeInsets.symmetric(horizontal: 10),
                       border: OutlineInputBorder(

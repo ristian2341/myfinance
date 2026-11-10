@@ -141,15 +141,15 @@ class _LoginScreenState extends State<LoginScreen>
                       Container(
                         margin: const EdgeInsets.only(top: 60),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF034C28).withOpacity(0.85),
+                          color: const Color(0xFF034C28).withValues(alpha: .85),
                           borderRadius: BorderRadius.circular(24),
                           border: Border.all(
-                            color: const Color(0xFFFFFEE0).withOpacity(0.25),
+                            color: const Color(0xFFFFFEE0).withValues(alpha: 0.25),
                             width: 1.5,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.4),
+                              color: Colors.black.withValues(alpha:  0.4),
                               blurRadius: 20,
                               offset: const Offset(0, 10),
                             ),

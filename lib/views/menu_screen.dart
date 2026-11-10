@@ -147,16 +147,16 @@ class MenuScreen extends StatelessWidget {
                             hintText: 'Cari data menu...',
                             hintStyle: TextStyle(
                               fontSize: 13,
-                              color: Colors.white.withOpacity(0.5),
+                              color: Colors.white.withValues(alpha: 0.5),
                             ),
                             prefixIcon:
                                 TextStyle(
-                                  color: Colors.white.withOpacity(0.5),
+                                  color: Colors.white.withValues(alpha: 0.5),
                                 ).toString().isEmpty
                                 ? Icon(
                                     Icons.search,
                                     size: 18,
-                                    color: Colors.white.withOpacity(0.5),
+                                    color: Colors.white.withValues(alpha: 0.5),
                                   )
                                 : null,
                             border: OutlineInputBorder(

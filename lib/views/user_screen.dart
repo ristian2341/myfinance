@@ -148,16 +148,16 @@ class UserScreen extends StatelessWidget {
                             hintText: 'Cari data menu...',
                             hintStyle: TextStyle(
                               fontSize: 13,
-                              color: Colors.white.withOpacity(0.5),
+                              color: Colors.white.withValues(alpha: 0.5),
                             ),
                             prefixIcon:
                                 TextStyle(
-                                  color: Colors.white.withOpacity(0.5),
+                                  color: Colors.white.withValues(alpha: 0.5),
                                 ).toString().isEmpty
                                 ? Icon(
                                     Icons.search,
                                     size: 12,
-                                    color: Colors.white.withOpacity(0.5),
+                                    color: Colors.white.withValues(alpha: 0.5),
                                   )
                                 : null,
                             border: OutlineInputBorder(
@@ -351,10 +351,10 @@ class UserScreen extends StatelessWidget {
                                   color: const Color(0xFF2C2C34),
                                   border: Border(
                                     bottom: BorderSide(
-                                      color: Colors.white.withOpacity(0.08),
+                                      color: Colors.white.withValues(alpha: 0.08),
                                     ),
                                     right: BorderSide(
-                                      color: Colors.white.withOpacity(0.08),
+                                      color: Colors.white.withValues(alpha: 0.08),
                                     ),
                                   ),
                                 ),
@@ -455,10 +455,10 @@ class UserScreen extends StatelessWidget {
                                 ), // Latar sel baris data
                                 border: Border(
                                   bottom: BorderSide(
-                                    color: Colors.white.withOpacity(0.08),
+                                    color: Colors.white.withValues(alpha: 0.08),
                                   ),
                                   right: BorderSide(
-                                    color: Colors.white.withOpacity(0.08),
+                                    color: Colors.white.withValues(alpha: 0.08),
                                   ),
                                 ),
                               ),
