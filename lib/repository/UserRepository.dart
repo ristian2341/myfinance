@@ -121,11 +121,16 @@ class UserRepository {
       );
 
       // delete user //
-      final userResult = await _db.rawDelete(
-        'DELETE FROM user WHERE code = ?',
-        [userCode],
-      );
-      return userResult > 0;
+      if (menuUserResult > 0) {
+        final userResult = await _db.rawDelete(
+          'DELETE FROM user WHERE code = ?',
+          [userCode],
+        );
+        return userResult > 0;
+      } else {
+        SnackbarHelper.danger("Error Hapus Menu user, hapus user dibatalkan");
+        return false;
+      }
     } catch (e) {
       SnackbarHelper.danger("Error menghapus data user: $e");
       return false;

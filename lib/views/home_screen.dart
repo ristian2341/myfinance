@@ -413,12 +413,12 @@ class HomeScreen extends StatelessWidget {
                               indicator: BoxDecoration(
                                 color: const Color(
                                   0xFF2ECC71,
-                                ).withOpacity(0.15),
+                                ).withValues(alpha: 0.15),
                                 borderRadius: BorderRadius.circular(20),
                                 border: Border.all(
                                   color: const Color(
                                     0xFF2ECC71,
-                                  ).withOpacity(0.5),
+                                  ).withValues(alpha: 0.5),
                                   width: 1,
                                 ),
                               ),
@@ -486,7 +486,7 @@ class HomeScreen extends StatelessWidget {
                                                 color: isSelected
                                                     ? const Color(
                                                         0xFF2ECC71,
-                                                      ).withOpacity(0.8)
+                                                      ).withValues(alpha: 0.8)
                                                     : const Color(0xFF4A5568),
                                               ),
                                             ),
@@ -736,7 +736,7 @@ class HomeScreen extends StatelessWidget {
                           child: Container(
                             height: 40,
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.06),
+                              color: Colors.white.withValues(alpha: 0.06),
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(
                                 color: Colors.white10,
@@ -756,12 +756,12 @@ class HomeScreen extends StatelessWidget {
                               decoration: InputDecoration(
                                 hintText: 'Search menu...',
                                 hintStyle: TextStyle(
-                                  color: Colors.white.withOpacity(0.3),
+                                  color: Colors.white.withValues(alpha: 0.3),
                                   fontSize: 13,
                                 ),
                                 prefixIcon: Icon(
                                   Icons.search_rounded,
-                                  color: Colors.white.withOpacity(0.4),
+                                  color: Colors.white.withValues(alpha: 0.4),
                                   size: 18,
                                 ),
                                 // Tombol 'X' untuk membersihkan pencarian dengan cepat (opsional)
@@ -808,7 +808,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Text(
                                   'Menu tidak ditemukan',
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.4),
+                                    color: Colors.white.withValues(alpha: 0.4),
                                     fontSize: 13,
                                   ),
                                 ),
@@ -866,7 +866,7 @@ class HomeScreen extends StatelessWidget {
                                           left: 16,
                                         ),
                                         collapsedIconColor: Colors.white
-                                            .withOpacity(0.4),
+                                            .withValues(alpha: 0.4),
                                         iconColor: const Color(0xFFD4AF37),
                                         trailing: const Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -892,7 +892,7 @@ class HomeScreen extends StatelessWidget {
                                                   BorderRadius.circular(8),
                                             ),
                                             hoverColor: Colors.white
-                                                .withOpacity(0.06),
+                                                .withValues(alpha: 0.06),
                                             contentPadding:
                                                 const EdgeInsets.symmetric(
                                                   horizontal: 12,
@@ -937,7 +937,7 @@ class HomeScreen extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(8),
                                     ),
-                                    hoverColor: Colors.white.withOpacity(0.06),
+                                    hoverColor: Colors.white.withValues(alpha: 0.06),
                                     horizontalTitleGap: 12,
                                     contentPadding: const EdgeInsets.symmetric(
                                       horizontal: 12,
@@ -978,7 +978,7 @@ class HomeScreen extends StatelessWidget {
                               bottomRight: Radius.circular(11),
                             ),
                           ),
-                          tileColor: Colors.red.withOpacity(0.1),
+                          tileColor: Colors.red.withValues(alpha: 0.1),
                           leading: const Icon(
                             Icons.logout,
                             color: Colors.redAccent,

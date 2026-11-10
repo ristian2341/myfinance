@@ -63,6 +63,7 @@ class GroupMenuController extends GetxController {
       final parsed = result.map((e) => GroupMenuModel.fromMap(e)).toList();
       groupMenus.assignAll(parsed);
     } catch (e) {
+      // ignore: avoid_print
       print('Error saat mengambil data group menu: $e');
       SnackbarHelper.danger("Error loadGroupMenus: $e");
     } finally {
@@ -91,7 +92,8 @@ class GroupMenuController extends GetxController {
               ? m['id_menu']
               : int.tryParse(m['id_menu']?.toString() ?? '0') ?? 0,
           namaMenu: m['nama_menu']?.toString() ?? '',
-          isHeader: m['id_header'] == 0 ||
+          isHeader:
+              m['id_header'] == 0 ||
               m['url_menu'] == '#' ||
               m['url_menu'] == '',
           isSelected: false,
@@ -154,7 +156,8 @@ class GroupMenuController extends GetxController {
           groupMenu: group.groupMenu,
           idMenu: idMenu,
           namaMenu: m['nama_menu']?.toString() ?? '',
-          isHeader: m['id_header'] == 0 ||
+          isHeader:
+              m['id_header'] == 0 ||
               m['url_menu'] == '#' ||
               m['url_menu'] == '',
           isSelected: isSelected,
@@ -247,7 +250,8 @@ class GroupMenuController extends GetxController {
       }
     }
 
-    item.canAll.value = item.canCreate.value &&
+    item.canAll.value =
+        item.canCreate.value &&
         item.canRead.value &&
         item.canUpdate.value &&
         item.canDelete.value;
@@ -275,15 +279,18 @@ class GroupMenuController extends GetxController {
       isLoading.value = true;
       final repo = GroupMenuRepository(db);
 
-      final selectedMenus = formMenuDetails.where((m) => m.isSelected.value).map((m) {
-        return {
-          'id_menu': m.idMenu,
-          'read': m.canRead.value ? 1 : 0,
-          'create': m.canCreate.value ? 1 : 0,
-          'update': m.canUpdate.value ? 1 : 0,
-          'delete': m.canDelete.value ? 1 : 0,
-        };
-      }).toList();
+      final selectedMenus = formMenuDetails
+          .where((m) => m.isSelected.value)
+          .map((m) {
+            return {
+              'id_menu': m.idMenu,
+              'read': m.canRead.value ? 1 : 0,
+              'create': m.canCreate.value ? 1 : 0,
+              'update': m.canUpdate.value ? 1 : 0,
+              'delete': m.canDelete.value ? 1 : 0,
+            };
+          })
+          .toList();
 
       final int? groupId = codeController.text.trim().isNotEmpty
           ? int.tryParse(codeController.text.trim())
@@ -347,7 +354,11 @@ class GroupMenuController extends GetxController {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         title: const Row(
           children: [
-            Icon(Icons.warning_amber_rounded, color: Colors.redAccent, size: 24),
+            Icon(
+              Icons.warning_amber_rounded,
+              color: Colors.redAccent,
+              size: 24,
+            ),
             SizedBox(width: 8),
             Text(
               'Hapus Group Menu',
