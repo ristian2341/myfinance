@@ -141,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen>
                       Container(
                         margin: const EdgeInsets.only(top: 60),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF034C28).withValues(alpha: .85),
+                          color: const Color(0xFF034C28).withValues(alpha: 0.5),
                           borderRadius: BorderRadius.circular(24),
                           border: Border.all(
                             color: const Color(0xFFFFFEE0).withValues(alpha: 0.25),
@@ -192,7 +192,7 @@ class _LoginScreenState extends State<LoginScreen>
                                   ),
                                   hintText: 'Enter Email / Username',
                                   hintStyle: TextStyle(
-                                    color: Colors.white.withOpacity(0.4),
+                                    color: Colors.white.withValues(alpha: 0.4),
                                     fontSize: 14,
                                   ),
                                   enabledBorder: const UnderlineInputBorder(
@@ -228,7 +228,7 @@ class _LoginScreenState extends State<LoginScreen>
                                     ),
                                     hintText: 'Enter Password',
                                     hintStyle: TextStyle(
-                                      color: Colors.white.withOpacity(0.4),
+                                      color: Colors.white.withValues(alpha: 0.4),
                                       fontSize: 14,
                                     ),
                                     enabledBorder: const UnderlineInputBorder(
@@ -309,7 +309,7 @@ class _LoginScreenState extends State<LoginScreen>
                                       BoxShadow(
                                         color: const Color(
                                           0xFFFF2A2A,
-                                        ).withOpacity(0.35),
+                                        ).withValues(alpha: 0.35),
                                         blurRadius: 12,
                                         spreadRadius: 1,
                                         offset: const Offset(0, 4),
