@@ -45,6 +45,8 @@ class UserRepository {
         data['foto'],
       ]);
 
+      print(maps);
+
       // 2. Ambil data terbaru dari DB untuk dikembalikan
       List<Map<String, dynamic>> insertUser = await _db.rawQuery(
         "SELECT * FROM user WHERE code = ?",
