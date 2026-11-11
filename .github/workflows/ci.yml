@@ -94,5 +94,5 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
-      - name: Build APK (Debug)
-        run: flutter build apk --debug
+      - name: Build Windows Release Executable (.exe)
+        run: flutter build windows --release
