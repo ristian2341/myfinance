@@ -93,6 +93,3 @@ jobs:
 
       - name: Install Dependencies
         run: flutter pub get
-
-      - name: Build Windows Release Executable (.exe)
-        run: flutter build windows --release
