@@ -31,10 +31,15 @@ class UserRepository {
     Map<String, dynamic> data,
   ) async {
     try {
-      String sql =
-          "insert into user (code, username, password, email, nama_panggilan, supervisor, phone, foto) values (@code, @username, @password, @email, @nama_user, @supervisor, @phone, @foto)";
+      if (data.isEmpty) {
+        SnackbarHelper.danger("Gagal input: Payload data kosong!");
+        return [];
+      }
 
-      final List<Map<String, dynamic>> maps = await _db.rawQuery(sql, [
+      String sql =
+          "insert into user (code, username, password, email, nama_panggilan, supervisor, phone, foto) values (?, ?, ?, ?, ?, ?, ?, ?)";
+
+      final int insertedRow = await _db.rawInsert(sql, [
         data['code'],
         data['username'],
         data['password'],
@@ -45,19 +50,25 @@ class UserRepository {
         data['foto'],
       ]);
 
-      print(maps);
+      if (insertedRow <= 0) {
+        SnackbarHelper.danger("Gagal input: Data user gagal disimpan ke database!");
+        return [];
+      }
 
       // 2. Ambil data terbaru dari DB untuk dikembalikan
-      List<Map<String, dynamic>> insertUser = await _db.rawQuery(
+      List<Map<String, dynamic>> maps = await _db.rawQuery(
         "SELECT * FROM user WHERE code = ?",
         [data['code']],
       );
 
-      if (insertUser.isNotEmpty) {
-        return insertUser;
-      } else {
+      print('Hasil insert user: $maps');
+
+      if (maps.isEmpty) {
+        SnackbarHelper.danger("Gagal input: Data user kosong atau tidak ditemukan!");
         return [];
       }
+
+      return maps;
     } catch (e) {
       SnackbarHelper.danger("Error SQLite Query User System: $e");
       return [];
